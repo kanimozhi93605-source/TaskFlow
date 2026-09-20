@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - To Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- BACKGROUND BUBBLES -->
+<div class="bubbles">
+    <span class="bubble bubble1"></span>
+    <span class="bubble bubble2"></span>
+    <span class="bubble bubble3"></span>
+    <span class="bubble bubble4"></span>
+    <span class="bubble bubble5"></span>
+    <span class="bubble bubble6"></span>
+</div>
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div>
+                <h1>TaskFlow</h1>
+                <p>Organize your day, one task at a time.</p>
+            </div>
+
+            <button id="themeBtn" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Pending</span>
+                <strong id="pendingTasks">0</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task -->
+        <section class="add-section">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you need to do?"
+            >
+
+            <select id="priorityInput">
+
+                <option value="Low">Low Priority</option>
+                <option value="Medium" selected>Medium Priority</option>
+                <option value="High">High Priority</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="dateInput"
+            >
+
+            <button id="addBtn">
+                + Add Task
+            </button>
+
+        </section>
+
+
+        <!-- Search + Filter -->
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search tasks..."
+            >
+
+            <div class="filters">
+
+                <button class="filter active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter" data-filter="pending">
+                    Pending
+                </button>
+
+                <button class="filter" data-filter="completed">
+                    Completed
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task List -->
+        <section>
+
+            <ul id="taskList"></ul>
+
+            <div id="emptyMessage" class="empty">
+                <div>📝</div>
+                <h3>No tasks found</h3>
+                <p>Add a task to get started.</p>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <button id="clearCompleted">
+                Clear Completed
+            </button>
+
+            <span>
+                Your tasks are saved automatically.
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <!-- EDIT TASK MODAL -->
+
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Edit Task</h2>
+
+            <button id="closeModal" class="close-modal">
+                ×
+            </button>
+        </div>
+
+        <label>Task Name</label>
+        <input type="text" id="editTitle">
+
+        <label>Priority</label>
+        <select id="editPriority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <label>Date</label>
+        <input type="date" id="editDate">
+
+        <div class="modal-buttons">
+
+            <button id="cancelEdit" class="cancel-btn">
+                Cancel
+            </button>
+
+            <button id="saveEdit" class="save-btn">
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

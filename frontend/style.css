@@ -1,0 +1,1108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #202124;
+    --muted: #777;
+    --border: #e4e6eb;
+    --primary: #5b5bf7;
+    --primary-dark: #4545d8;
+    --danger: #ef4444;
+    --success: #22c55e;
+}
+
+body.dark {
+    --bg: #12141a;
+    --card: #1d2028;
+    --text: #f5f5f5;
+    --muted: #a5a5a5;
+    --border: #343842;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+.app {
+    width: 92%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: var(--muted);
+}
+
+.theme-btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/* STATISTICS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+
+/* ADD SECTION */
+
+.add-section {
+    display: grid;
+    grid-template-columns: 1fr 160px 160px 120px;
+    gap: 10px;
+    background: var(--card);
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    padding: 13px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+}
+
+#addBtn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#addBtn:hover {
+    background: var(--primary-dark);
+}
+
+
+/* CONTROLS */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 300px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filter {
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filter.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+
+/* TASK */
+
+#taskList {
+    list-style: none;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.task.completed .task-title {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.task-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 7px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* PRIORITY */
+
+.priority {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.low {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+/* ACTION BUTTONS */
+
+.actions {
+    display: flex;
+    gap: 7px;
+}
+
+.actions button {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+/* EMPTY */
+
+.empty {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--muted);
+}
+
+.empty div {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.empty h3 {
+    margin-bottom: 5px;
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+#clearCompleted {
+    background: transparent;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .app {
+        margin: 25px auto;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .add-section {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #searchInput {
+        width: 100%;
+    }
+
+    .filters {
+        justify-content: center;
+    }
+
+    .task {
+        align-items: flex-start;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* ===============================
+   EDIT MODAL
+================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 450px;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    animation: modalOpen 0.2s ease;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close-modal {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-content label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cancel-btn {
+    background: #eeeeee;
+}
+
+.save-btn {
+    background: #6c5ce7;
+    color: white;
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ===============================
+   TASK ACTION BUTTONS
+================================ */
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background: rgba(108, 92, 231, 0.1);
+}
+
+
+/* ===============================
+   DARK MODE MODAL
+================================ */
+
+.dark-mode .modal-content {
+    background: #1e1e2e;
+    color: white;
+}
+
+.dark-mode .modal-content input,
+.dark-mode .modal-content select {
+    background: #2a2a3d;
+    color: white;
+    border-color: #444;
+}
+
+.dark-mode .cancel-btn {
+    background: #333344;
+    color: white;
+}
+
+.dark-mode .close-modal {
+    color: white;
+}
+/* ===============================
+   DARK MODE
+================================ */
+
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .container,
+body.dark-mode .main-container {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background: #2a2a2a;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-mode input::placeholder {
+    color: #aaa;
+}
+
+body.dark-mode .task-item {
+    background: #1f1f1f;
+    border-color: #333;
+    color: #ffffff;
+}
+
+body.dark-mode .task-item strong {
+    color: #ffffff;
+}
+
+body.dark-mode .task-details {
+    color: #aaa;
+}
+
+body.dark-mode .filter {
+    background: #2a2a2a;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-mode .filter.active {
+    background: #6c5ce7;
+    color: white;
+}
+
+body.dark-mode .search-box,
+body.dark-mode .input-section,
+body.dark-mode .stats-card {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode button {
+    color: white;
+}
+
+body.dark-mode .modal-content {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode .modal-content input,
+body.dark-mode .modal-content select {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+body.dark-mode .cancel-btn {
+    background: #333;
+    color: white;
+}
+/* =================================
+   ✨ TASKFLOW PREMIUM ANIMATIONS
+================================= */
+
+/* Smooth page animation */
+body {
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Task cards entrance animation */
+.task-item {
+    animation: taskAppear 0.4s ease forwards;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.18);
+}
+
+@keyframes taskAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =================================
+   ✨ ADD BUTTON GLOW
+================================= */
+
+#addBtn {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(108, 92, 231, 0.55);
+}
+
+#addBtn:active {
+    transform: scale(0.96);
+}
+
+
+/* =================================
+   ✨ GLOW / SHIMMER EFFECT
+================================= */
+
+#addBtn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.5),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+}
+
+#addBtn:hover::after {
+    animation: shimmer 0.8s ease;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 150%;
+    }
+}
+
+
+/* =================================
+   ✨ STATS CARDS
+================================= */
+
+.stats-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.18);
+}
+
+
+/* =================================
+   ✨ SEARCH INPUT GLOW
+================================= */
+
+#searchInput:focus,
+#taskInput:focus,
+#priorityInput:focus,
+#dateInput:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.25);
+    transition: 0.3s ease;
+}
+
+
+/* =================================
+   ✨ EDIT / DELETE BUTTON
+================================= */
+
+.edit-btn,
+.delete-btn {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    transform: scale(1.15);
+}
+
+
+/* =================================
+   ✨ FILTER BUTTON
+================================= */
+
+.filter {
+    transition: all 0.25s ease;
+}
+
+.filter:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   ✨ THEME BUTTON
+================================= */
+
+#themeBtn {
+    transition: transform 0.4s ease;
+}
+
+#themeBtn:hover {
+    transform: rotate(25deg) scale(1.1);
+}
+
+
+/* =================================
+   ✨ MODAL ANIMATION
+================================= */
+
+.modal.show .modal-content {
+    animation: modalPop 0.3s ease;
+}
+
+@keyframes modalPop {
+
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =================================
+   ✨ DARK MODE GLOW
+================================= */
+
+body.dark-mode .task-item:hover {
+    box-shadow:
+        0 0 12px rgba(108, 92, 231, 0.25),
+        0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode #addBtn:hover {
+    box-shadow: 0 0 22px rgba(140, 120, 255, 0.65);
+}/* =================================
+   🌌 ANIMATED BACKGROUND
+================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background glow blobs */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* First floating glow */
+body::before {
+    top: -120px;
+    left: -100px;
+    background: #8b7cff;
+    animation: floatingGlow1 8s ease-in-out infinite alternate;
+}
+
+/* Second floating glow */
+body::after {
+    bottom: -150px;
+    right: -100px;
+    background: #c084fc;
+    animation: floatingGlow2 10s ease-in-out infinite alternate;
+}
+
+
+/* =================================
+   ✨ FLOATING ANIMATION
+================================= */
+
+@keyframes floatingGlow1 {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(120px, 80px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(40px, 180px) scale(0.9);
+    }
+
+}
+
+
+@keyframes floatingGlow2 {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-100px, -100px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-30px, -180px) scale(0.9);
+    }
+
+}
+
+
+/* =================================
+   🌙 DARK MODE BACKGROUND
+================================= */
+
+body.dark-mode::before {
+    background: #6c5ce7;
+    opacity: 0.18;
+}
+
+body.dark-mode::after {
+    background: #9b59b6;
+    opacity: 0.15;
+}
+/* =================================
+   🫧 FLOATING BACKGROUND BUBBLES
+================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    isolation: isolate;
+}
+
+/* Common bubble style */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* 🫧 Bubble 1 */
+body::before {
+    width: 180px;
+    height: 180px;
+    top: 10%;
+    left: 5%;
+
+    background: rgba(108, 92, 231, 0.18);
+
+    box-shadow:
+        250px 100px 0 rgba(162, 155, 254, 0.15),
+        500px -50px 0 rgba(108, 92, 231, 0.12),
+        750px 250px 0 rgba(192, 132, 252, 0.15);
+
+    animation: bubbleFloat 12s ease-in-out infinite alternate;
+}
+
+/* 🫧 Bubble 2 */
+body::after {
+    width: 120px;
+    height: 120px;
+    bottom: 10%;
+    right: 8%;
+
+    background: rgba(192, 132, 252, 0.18);
+
+    box-shadow:
+        -250px -100px 0 rgba(108, 92, 231, 0.12),
+        -500px 50px 0 rgba(162, 155, 254, 0.14),
+        -700px -200px 0 rgba(192, 132, 252, 0.12);
+
+    animation: bubbleFloat2 15s ease-in-out infinite alternate;
+}
+
+/* Bubble movement */
+@keyframes bubbleFloat {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -50px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-30px, 40px) scale(0.9);
+    }
+}
+
+@keyframes bubbleFloat2 {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-50px, -40px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(30px, 50px) scale(0.85);
+    }
+}
+
+/* 🌙 Dark mode bubbles */
+body.dark-mode::before {
+    background: rgba(108, 92, 231, 0.15);
+
+    box-shadow:
+        250px 100px 0 rgba(140, 120, 255, 0.12),
+        500px -50px 0 rgba(108, 92, 231, 0.10),
+        750px 250px 0 rgba(192, 132, 252, 0.10);
+}
+
+body.dark-mode::after {
+    background: rgba(155, 89, 182, 0.14);
+
+    box-shadow:
+        -250px -100px 0 rgba(108, 92, 231, 0.10),
+        -500px 50px 0 rgba(140, 120, 255, 0.10),
+        -700px -200px 0 rgba(155, 89, 182, 0.10);
+}
+/* =================================
+   🫧 FLOATING BUBBLE BACKGROUND
+================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Bubble container */
+.bubbles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Bubble */
+.bubble {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+
+   background: rgba(180, 170, 255, 0.10);
+
+    box-shadow:
+        inset 5px 5px 15px rgba(255,255,255,0.35),
+        0 10px 30px rgba(180,170,255,0.08);
+
+    animation: floatBubble 10s infinite ease-in-out;
+}
+
+/* Different sizes and positions */
+
+.bubble1 {
+    width: 100px;
+    height: 100px;
+    left: 8%;
+    top: 15%;
+    animation-duration: 9s;
+}
+
+.bubble2 {
+    width: 55px;
+    height: 55px;
+    left: 25%;
+    top: 70%;
+    animation-duration: 12s;
+}
+
+.bubble3 {
+    width: 140px;
+    height: 140px;
+    right: 8%;
+    top: 18%;
+    animation-duration: 11s;
+}
+
+.bubble4 {
+    width: 70px;
+    height: 70px;
+    right: 25%;
+    bottom: 10%;
+    animation-duration: 8s;
+}
+
+.bubble5 {
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    top: 10%;
+    animation-duration: 13s;
+}
+
+.bubble6 {
+    width: 85px;
+    height: 85px;
+    left: 65%;
+    bottom: 15%;
+    animation-duration: 10s;
+}
+
+/* Floating animation */
+
+@keyframes floatBubble {
+
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-30px) translateX(20px);
+    }
+
+    50% {
+        transform: translateY(-60px) translateX(-20px);
+    }
+
+    75% {
+        transform: translateY(-30px) translateX(30px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* 🌙 Dark mode */
+
+body.dark-mode .bubble {
+    background: rgba(140, 120, 255, 0.12);
+
+    box-shadow:
+        inset 5px 5px 15px rgba(255,255,255,0.15),
+        0 10px 30px rgba(108,92,231,0.2);
+}
+.container,
+.main-container,
+header,
+main,
+section {
+    position: relative;
+    z-index: 1;
+}
+/* =================================
+   ✨ MOUSE GLITTER EFFECT
+================================= */
+
+/* =================================
+   ✨ GOLDEN MOUSE GLITTER
+================================= */
+
+/* ✨ NORMAL GOLDEN GLITTER */
+
+/* =================================
+   ⭐ GOLDEN STAR GLITTER
+================================= */
